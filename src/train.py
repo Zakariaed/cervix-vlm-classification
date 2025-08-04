@@ -356,7 +356,7 @@ def clip_collate_fn(batch):
 def main():
     # Configuration
     config = {
-        'data_dir': '/kaggle/input/grid-cropped-cervix-images-74/grid_cropped_cervix_images_74',
+        'data_dir': 'data/grid_cropped_cervix_images_74',
         'batch_size': 16,  # Reduced for memory efficiency
         'epochs': 30,
         'learning_rate': 1e-4,
