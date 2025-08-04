@@ -1,0 +1,41 @@
+# Model Configuration
+model:
+  name: "openai/clip-vit-base-patch32"
+  num_classes: 4
+  use_text_prompts: true
+  freeze_backbone: false
+
+# Data Configuration  
+data:
+  root_dir: "data/grid_cropped_cervix_images_74"
+  image_size: 224
+  batch_size: 32
+  num_workers: 4
+  test_size: 0.2
+  val_size: 0.1
+
+# Training Configuration
+training:
+  epochs: 50
+  learning_rate: 1e-4
+  weight_decay: 1e-5
+  scheduler: "cosine"
+  early_stopping_patience: 10
+  
+# Augmentation Configuration
+augmentation:
+  horizontal_flip: 0.5
+  vertical_flip: 0.5
+  rotation: 15
+  color_jitter:
+    brightness: 0.2
+    contrast: 0.2
+    saturation: 0.2
+    hue: 0.1
+
+# Experiment Configuration
+experiment:
+  name: "cervix_vlm_baseline"
+  use_wandb: true
+  save_dir: "experiments"
+  seed: 42
